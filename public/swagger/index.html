@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Swagger UI</title>
+    <link rel="stylesheet" type="text/css" href="./swagger-ui.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
+  </head>
+
+  <body>
+    <script src="./keycloak.js"></script>
+    <script>
+const params = new URLSearchParams(location.search)
+const keycloak = Keycloak({
+  url: `https://${location.hostname.replace('portal', 'centralidp')}/auth/`,
+  realm: params.get('realm') || 'CX-Central',
+  clientId: params.get('client') || 'Cl2-CX-Portal',
+})
+const LogLevel = {
+  ERROR: 'ERROR',
+  WARN:  ' WARN',
+  INFO:  ' INFO',
+}
+let username = ''
+const logtime = (date) => new Date(date || Date.now()).toISOString().substring(11, 19)
+const log = (level, message, data) => console.log(`${logtime()} ${level} '${username}' ${message}`, data || '')
+const info = (message, data) => log(LogLevel.INFO, message, data)
+const warn = (message, data) => log(LogLevel.WARN, message, data)
+const error = (message, data) => log(LogLevel.ERROR, message, data)
+//info('keyclok configured', keycloak)
+
+keycloak.init({ onLoad: 'login-required' })
+  .then((authenticated) => {
+    username = keycloak.tokenParsed?.name
+    //info(`signed in`)
+    //info(`authenticated ${authenticated}`, keycloak)
+    //info(`expires ${keycloak.tokenParsed && logtime(keycloak.tokenParsed.exp*1000)} ${keycloak.refreshTokenParsed && logtime(keycloak.refreshTokenParsed.exp*1000)}`)
+  }).catch((error) => warn(`sign in failed`, error))
+
+keycloak.onTokenExpired = () => {
+  //info('token expired', keycloak)
+  keycloak.updateToken(50)
+    .then((refreshed) => {
+      //info(`refreshed ${refreshed}`, keycloak)
+      //info(`expires ${keycloak.tokenParsed && logtime(keycloak.tokenParsed.exp*1000)} ${keycloak.refreshTokenParsed && logtime(keycloak.refreshTokenParsed.exp*1000)}`)
+    })
+    .catch((error) => warn(`refresh failed`, error))
+}
+
+const selectAPI = () => {
+  const select = document.getElementById('select')
+  const options = Array.from(select.childNodes)
+  const apiName = params.get('urls.primaryName') || options[0].text
+  //console.log(apiName)
+  const url = options.filter(c => c.text === apiName)[0].value
+  Object.values(select).filter(v => v.id)[0].onChange(
+    { target: { value: url }, preventDefault: () => {} }
+  )
+}
+    </script>
+    <div id="swagger-ui"></div>
+    <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
+    <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+    <script src="./conf/swagger-initializer.js" charset="UTF-8"> </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "configUrl": "/swagger/api/swagger-config",
+  "oauth2RedirectUrl": "https://portal.int.demo.catena-x.net/swagger/oauth2-redirect.html",
+  "urls": [
+    {
+      "name": "Portal Provisioning API",
+      "url": "https://portal-backend.int.demo.catena-x.net/api/provisioning/swagger/v2/swagger.json"
+    },
+    {
+      "name": "Portal Registration API",
+      "url": "https://portal-backend.int.demo.catena-x.net/api/registration/swagger/v2/swagger.json"
+    },
+    {
+      "name": "Portal Administration API",
+      "url": "https://portal-backend.int.demo.catena-x.net/api/administration/swagger/v2/swagger.json"
+    },
+    {
+      "name": "Portal App Marketplace API",
+      "url": "https://portal-backend.int.demo.catena-x.net/api/apps/swagger/v2/swagger.json"
+    },
+    {
+      "name": "Portal Notification API",
+      "url": "https://portal-backend.int.demo.catena-x.net/api/notification/swagger/v2/swagger.json"
+    },
+    {
+      "name": "Portal Services API",
+      "url": "https://portal-backend.int.demo.catena-x.net/api/services/swagger/v2/swagger.json"
+    },
+    {
+      "name": "Business Partner Data Management API",
+      "url": "https://catenax-bpdm-int.demo.catena-x.net/v3/api-docs"
+    },
+    {
+      "name": "AAS Registry API",
+      "url": "https://semantics.int.demo.catena-x.net/registry/aas-registry-openapi.yaml"
+    },
+    {
+      "name": "SemanticHub API",
+      "url": "https://semantics.int.demo.catena-x.net/hub/semantic-hub-openapi.yaml"
+    },
+    {
+      "name": "IRS API",
+      "url": "http://irs.int.demo.catena-x.net/api/api-docs"
+    }
+  ],
+  "validatorUrl": ""
+}
