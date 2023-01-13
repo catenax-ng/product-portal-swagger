@@ -14,7 +14,9 @@
     <script>
 const params = new URLSearchParams(location.search)
 const keycloak = Keycloak({
-  url: `https://${location.hostname.replace('portal', 'centralidp')}/auth/`,
+  url: location.hostname === 'localhost'
+    ? `https://centralidp.dev.demo.catena-x.net/auth/`
+    : `https://${location.hostname.replace('portal', 'centralidp')}/auth/`,
   realm: params.get('realm') || 'CX-Central',
   clientId: params.get('client') || 'Cl2-CX-Portal',
 })
