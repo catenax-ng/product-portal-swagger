@@ -38,4 +38,4 @@ ingress:
             service: "portal-swagger"
             port: 8080
 image:
-  swaggertag: main_9a692db82ec57c407c7b3a4aad568d7c21c0dbf8
+  swaggertag: main_ac697dae4bf0ea3df5b09c9c3fcb0b99d1b48bb9
