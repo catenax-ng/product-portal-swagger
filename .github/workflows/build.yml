@@ -22,7 +22,6 @@ on:
   push:
     branches:
       - 'main'
-      - 'enabler/helm-setup-test'
 
 env:
   REGISTRY: ghcr.io
