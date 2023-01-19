@@ -38,4 +38,4 @@ ingress:
             service: "portal-swagger"
             port: 8080
 image:
-  swaggertag: main_ac697dae4bf0ea3df5b09c9c3fcb0b99d1b48bb9
+  swaggertag: enabler-helm-setup-test_c23142cc4055a2dfcc5621ad70b96aa107912018
