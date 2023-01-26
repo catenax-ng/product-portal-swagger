@@ -20,7 +20,7 @@ window.onload = function() {
     },
   })
   window.ui.initOAuth({
-    clientId: 'catenax-portal',
+    clientId: 'Cl2-CX-Portal',
     scopes: 'openid profile',
     usePkceWithAuthorizationCodeGrant: 'true'
   })
