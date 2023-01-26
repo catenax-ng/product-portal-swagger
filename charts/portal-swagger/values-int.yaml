@@ -32,7 +32,7 @@ ingress:
   hosts:
     - host: "portal-swagger.int.demo.catena-x.net"
       paths:
-        - path: "/swagger/(.*)"
+        - path: "/(.*)"
           pathType: "Prefix"
           backend:
             service: "portal-swagger"
