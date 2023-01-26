@@ -1,6 +1,6 @@
 {
   "configUrl": "/swagger/api/swagger-config",
-  "oauth2RedirectUrl": "https://portal-swagger.dev.demo.catena-x.net/swagger/oauth2-redirect.html",
+  "oauth2RedirectUrl": "https://portal-swagger.dev.demo.catena-x.net/oauth2-redirect.html",
   "urls": [
     {
       "name": "Portal Provisioning API",

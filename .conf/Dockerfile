@@ -11,5 +11,5 @@
 
 FROM nginxinc/nginx-unprivileged:alpine
 COPY .conf/nginx.conf /etc/nginx/conf.d/default.conf
-COPY /public/swagger /usr/share/nginx/html/swagger
+COPY /public/swagger/* /usr/share/nginx/html/
 USER 101

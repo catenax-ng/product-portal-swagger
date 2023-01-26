@@ -58,6 +58,6 @@ jobs:
           context: .
           file: .conf/Dockerfile
           push: true
-          # build tag :main with commit-sha and latest
-          tags: ${{ steps.meta.outputs.tags }}_${{ env.COMMIT_SHA }}, ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          # build tag :main
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:main
           labels: ${{ steps.meta.outputs.labels }}

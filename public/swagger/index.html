@@ -16,7 +16,7 @@ const params = new URLSearchParams(location.search)
 const keycloak = Keycloak({
   url: location.hostname === 'localhost'
     ? `https://centralidp.dev.demo.catena-x.net/auth/`
-    : `https://${location.hostname.replace('portal-swagger', 'centralidp')}/auth/`,
+    : `https://${location.hostname.replace(location.hostname.split('.')[0], 'centralidp')}/auth/`,
   realm: params.get('realm') || 'CX-Central',
   clientId: params.get('client') || 'Cl2-CX-Portal',
 })
@@ -65,6 +65,6 @@ const selectAPI = () => {
     <div id="swagger-ui"></div>
     <script src="./swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="./swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
-    <script src="./conf/swagger-initializer.js" charset="UTF-8"> </script>
+    <script src="./conf-swagger-initializer.js" charset="UTF-8"> </script>
   </body>
 </html>

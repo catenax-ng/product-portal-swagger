@@ -12,8 +12,8 @@ window.onload = function() {
     ],
     layout: 'StandaloneLayout',
     configUrl: location.hostname === 'localhost'
-      ? './conf/dev.json'
-      : `./conf/${location.hostname.replace(/^portal-swagger\.([a-zA-Z0-9-_]+)\.demo.catena-x.net$/, "$1")}.json`,
+      ? './conf-dev.json'
+      : `./conf-${location.hostname.replace(/^[^.]+\.([a-zA-Z0-9-_]+)\.demo.catena-x.net$/, "$1")}.json`,
     requestInterceptor: (req) => {
       req.headers.Authorization = `Bearer ${keycloak.token}`
       return req
