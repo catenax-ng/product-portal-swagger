@@ -30,4 +30,4 @@ ingress:
   enabled: false
 image:
   name: "ghcr.io/catenax-ng/product-portal-swagger"
-  swaggertag: 0.0.1
+  swaggertag: main
