@@ -12,7 +12,6 @@
     "kill-port": "^2.0.1"
   },
   "scripts": {
-    "start": "yarn run open",
-    "open": "concurrently \"http-server -a localhost -p 3000\" \"open http://localhost:3000/swagger/\""
+    "start": "http-server -a 127.0.0.1 -p 3004"
   }
 }

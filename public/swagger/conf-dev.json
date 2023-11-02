@@ -3,10 +3,6 @@
   "oauth2RedirectUrl": "https://portal-swagger.dev.demo.catena-x.net/oauth2-redirect.html",
   "urls": [
     {
-      "name": "Portal Provisioning API",
-      "url": "https://portal-backend.dev.demo.catena-x.net/api/provisioning/swagger/v2/swagger.json"
-    },
-    {
       "name": "Portal Registration API",
       "url": "https://portal-backend.dev.demo.catena-x.net/api/registration/swagger/v2/swagger.json"
     },
@@ -28,7 +24,7 @@
     },
     {
       "name": "Business Partner Data Management API",
-      "url": "https://catenax-bpdm-dev.demo.catena-x.net/v3/api-docs"
+      "url": "https://business-partners.dev.demo.catena-x.net/pool/docs/api-docs/docs"
     },
     {
       "name": "AAS Registry API",
