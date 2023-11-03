@@ -27,9 +27,9 @@ on:
   # paths-ignore:
   #   - "**/*.md"
   #   - "**/*.txt"
-  schedule:
+  #schedule:
     # Once a day
-    - cron: "0 0 * * *"
+  #  - cron: "0 0 * * *"
   workflow_dispatch:
   # Trigger manually
 

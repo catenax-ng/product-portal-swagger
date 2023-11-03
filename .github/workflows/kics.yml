@@ -27,8 +27,8 @@ on:
   # paths-ignore:
   #   - "**/*.md"
   #   - "**/*.txt"
-  schedule:
-    - cron: "0 0 * * *"
+  #schedule:
+  #  - cron: "0 0 * * *"
 
 jobs:
   analyze:

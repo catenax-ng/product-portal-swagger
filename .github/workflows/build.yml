@@ -19,9 +19,10 @@
 name: build
 
 on:
-  push:
-    branches:
-      - 'main'
+  workflow_dispatch:
+#  push:
+#    branches:
+#      - 'main'
 
 env:
   REGISTRY: ghcr.io
