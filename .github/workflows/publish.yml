@@ -44,7 +44,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'public'
+          path: './public/swagger'
 
       - name: Deploy to GitHub Pages
         id: deployment
