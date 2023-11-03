@@ -11,9 +11,7 @@ window.onload = function() {
       SwaggerUIBundle.plugins.DownloadUrl
     ],
     layout: 'StandaloneLayout',
-    configUrl: location.hostname === 'localhost'
-      ? './conf-dev.json'
-      : `./conf-${location.hostname.replace(/^[^.]+\.([a-zA-Z0-9-_]+)\.demo.catena-x.net$/, "$1")}.json`,
+    configUrl: './conf-dev.json',
     requestInterceptor: (req) => {
       req.headers.Authorization = `Bearer ${keycloak.token}`
       return req
